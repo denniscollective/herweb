@@ -7,7 +7,7 @@
     "dev": "next dev src",
     "build": "next build src",
     "start": "next start src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard --fix",
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,8 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
   }
 }

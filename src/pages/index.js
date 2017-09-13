@@ -1,12 +1,11 @@
 import React from 'react'
 import initStore from '../store'
-import withRedux from "next-redux-wrapper"
-import {incrementYear} from "../actions"
-
+import withRedux from 'next-redux-wrapper'
+import { incrementYear } from '../actions'
 
 class Page extends React.Component {
-  static getInitialProps({ isServer}) {
-    return { title: "heyah", year: 2000, isServer }
+  static getInitialProps ({ isServer }) {
+    return { title: 'heyah', year: 2000, isServer }
   }
 
   render () {
@@ -19,18 +18,22 @@ class Page extends React.Component {
   }
 }
 
-const Footer = ({ year, onFooterClick}) =>  (
+const Footer = ({ year, onFooterClick }) => (
   <footer>
-    <a href="javacript:void(0)" onClick={onFooterClick}>Copyright {year}</a>
+    <a href='javacript:void(0)' onClick={onFooterClick}>Copyright {year}</a>
   </footer>
 )
 
 function mapStateToProps (state1) {
-  let {year} = state1
-  return {year}
+  let { year } = state1
+  return { year }
 }
 
-function mapDispatchToProps(dispatch) {
- return { onFooterClick: ()=>{ dispatch(incrementYear()) }}
+function mapDispatchToProps (dispatch) {
+  return {
+    onFooterClick: () => {
+      dispatch(incrementYear())
+    }
+  }
 }
 export default withRedux(initStore, mapStateToProps, mapDispatchToProps)(Page)
