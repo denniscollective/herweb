@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev src",
-    "build": "next build src",
+    "build": "next build src --port 3030",
     "start": "next start src",
-    "test": "standard --fix",
+    "test": "standard --fix"
   },
   "author": "",
   "license": "ISC",
